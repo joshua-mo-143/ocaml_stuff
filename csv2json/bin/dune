@@ -1,0 +1,6 @@
+(executable
+ (public_name csv2json)
+ (name main)
+ (libraries csv2json yojson ppx_deriving_yojson.runtime)
+  (preprocess (pps ppx_deriving_yojson))
+)
