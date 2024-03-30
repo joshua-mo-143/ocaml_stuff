@@ -4,7 +4,12 @@ exception InvalidArgument of string
 
 let input_filename = ref ""
 let output_filename = ref ""
-let anon_fun filename = input_filename := filename
+
+let anon_fun filename =
+  match Filename.check_suffix filename ".json" with
+  | true -> input_filename := filename
+  | false -> raise (InvalidArgument "That's not a JSON file!")
+
 let speclist = [ ("-o", Arg.Set_string output_filename, "Output filename") ]
 let usage_msg = "Usage: <input-file> -o <output-file>"
 let () = Arg.parse speclist anon_fun usage_msg
