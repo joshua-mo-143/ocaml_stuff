@@ -1,7 +1,7 @@
 (executable
  (public_name dream_service)
  (name main)
- (libraries dream_service yojson ppx_deriving_yojson.runtime dream lwt atdgen-runtime)
+ (libraries dream_service yojson ppx_deriving_yojson.runtime dream lwt atdgen-runtime caqti-driver-postgresql)
   (preprocess (pps ppx_deriving_yojson lwt_ppx))
 )
 

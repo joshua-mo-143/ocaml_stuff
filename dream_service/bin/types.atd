@@ -1,3 +1,7 @@
 type meme = { id: int; message: string }
 
-type memes = { title: string; memes: meme list }
+type meme_list = { title: string; page: int; memes: meme list }
+type meme_single = { title: string; meme: meme }
+type memes = { title: string; page: int; memes: meme list }
+
+type meme_submission = { message: string }

@@ -16,7 +16,6 @@ depends: [
   "ppx_deriving_yojson"
   "yojson"
   "lwt"
-  "atdgen-runtime"
   "odoc" {with-doc}
 ]
 build: [

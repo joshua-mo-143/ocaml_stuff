@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+    links:
+      - postgres
+    environment:
+      DATABASE_URL: "postgres://postgres:postgres@postgres/postgres"
+  postgres:
+    image: "postgres"
+    ports:
+      - "5556:5432"
+    environment:
+      POSTGRES_PASSWORD: "postgres"
