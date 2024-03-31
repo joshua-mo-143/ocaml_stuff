@@ -1,0 +1,1 @@
+type meme = { id: int; message: string }

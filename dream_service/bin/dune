@@ -1,0 +1,20 @@
+(executable
+ (public_name dream_service)
+ (name main)
+ (libraries dream_service yojson ppx_deriving_yojson.runtime dream lwt atdgen-runtime)
+  (preprocess (pps ppx_deriving_yojson lwt_ppx))
+)
+
+ (rule
+ (targets types_j.ml
+          types_j.mli)
+ (deps types.atd)
+ (action (run atdgen -j %{deps}))
+ )
+
+ (rule
+ (targets types_t.ml
+          types_t.mli)
+ (deps types.atd)
+ (action (run atdgen -t %{deps}))
+ )
